@@ -83,7 +83,7 @@ public class OnlineAlbumHandler extends AlbumHandler {
 		String onlineId = pageURL.substring(pageURL.indexOf("online/") + 7, pageURL.indexOf("/album"));
 
 		//¡¾ÃèÊö¡¿
-		String startIndexStr = "<a href=\"http://www.douban.com/online/" + onlineId + "/photo/" + imageId + "/\" title=\"";
+		String startIndexStr = "<a href=\"https://www.douban.com/online/" + onlineId + "/photo/" + imageId + "/\" title=\"";
 		int descStartIndex = source.indexOf(startIndexStr);
 		String desc;
 		if (descStartIndex != -1) {
@@ -110,7 +110,7 @@ public class OnlineAlbumHandler extends AlbumHandler {
 		String ownerName = ownerA.substring(ownerA.indexOf(">") + 1);
 		
 		//¡¾ÕÕÆ¬ÆÀÂÛÊı¡¿
-		String commentTatolStartIndexStr = "<a href=\"http://www.douban.com/online/" + onlineId + "/photo/" + imageId + "/#comments\">";
+		String commentTatolStartIndexStr = "<a href=\"https://www.douban.com/online/" + onlineId + "/photo/" + imageId + "/#comments\">";
 		int commentTatolStartIndex = source.indexOf(commentTatolStartIndexStr);
 		Integer commentTatol = null;
 		if (commentTatolStartIndex != -1) {

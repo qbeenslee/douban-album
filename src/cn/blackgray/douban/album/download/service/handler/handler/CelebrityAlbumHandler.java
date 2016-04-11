@@ -91,7 +91,7 @@ public class CelebrityAlbumHandler extends AlbumHandler {
 		String imageId = imageURL.substring(imageURL.lastIndexOf("/p") + 2,imageURL.lastIndexOf("."));
 		String celebrityId = pageURL.substring(pageURL.indexOf("celebrity/") + 10, pageURL.indexOf("/photos"));
 		//【描述】
-		String startIndexStr = "<a href=\"http://movie.douban.com/celebrity/" + celebrityId + "/photo/" + imageId + "/\" class=\"";
+		String startIndexStr = "<a href=\"https://movie.douban.com/celebrity/" + celebrityId + "/photo/" + imageId + "/\" class=\"";
 		int descStartIndex = source.indexOf(startIndexStr);
 		String desc;
 		if (descStartIndex != -1) {
@@ -103,7 +103,7 @@ public class CelebrityAlbumHandler extends AlbumHandler {
 		}
 		//【照片评论数】
 		//<a href="http://movie.douban.com/celebrity/1040543/photo/1261122420/#comments">29回应</a>
-		String commentTatolStartIndexStr = "<a href=\"http://movie.douban.com/celebrity/" + celebrityId + "/photo/" + imageId + "/#comments\">";
+		String commentTatolStartIndexStr = "<a href=\"https://movie.douban.com/celebrity/" + celebrityId + "/photo/" + imageId + "/#comments\">";
 		int commentTatolStartIndex = source.indexOf(commentTatolStartIndexStr);
 		Integer commentTatol = null;
 		if (commentTatolStartIndex != -1) {

@@ -160,7 +160,7 @@ public class SitePublicAlbumHandler extends AlbumHandler {
 
 	@Override
 	public String getAlbumDesc(String source) {
-		String startTag = "data-title=\"";
+		String startTag = "data-desc=\"";
 		if (source.indexOf(startTag) != -1) {
 			int startIndex = source.indexOf(startTag) + startTag.length();
 			String desc = source.substring(startIndex,source.indexOf("\"", startIndex)).replace("\\t\\n","").trim();

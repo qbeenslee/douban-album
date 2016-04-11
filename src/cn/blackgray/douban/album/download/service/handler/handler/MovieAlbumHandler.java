@@ -116,7 +116,7 @@ public class MovieAlbumHandler extends AlbumHandler {
 //        </li>
 		String imageId = imageURL.substring(imageURL.lastIndexOf("/p") + 2,imageURL.lastIndexOf("."));
 		//【描述】
-		String startIndexStr = "<a href=\"http://movie.douban.com/photos/photo/" + imageId + "/\">";
+		String startIndexStr = "<a href=\"https://movie.douban.com/photos/photo/" + imageId + "/\">";
 		int descStartIndex = source.indexOf(startIndexStr);
 		String desc;
 		if (descStartIndex != -1) {
@@ -128,7 +128,7 @@ public class MovieAlbumHandler extends AlbumHandler {
 		}
 		//【照片评论数】
 		//<a href="http://movie.douban.com/celebrity/1040543/photo/1261122420/#comments">29回应</a>
-		String commentTatolStartIndexStr = "<a href=\"http://movie.douban.com/photos/photo/" + imageId + "/#comments\">";
+		String commentTatolStartIndexStr = "<a href=\"https://movie.douban.com/photos/photo/" + imageId + "/#comments\">";
 		int commentTatolStartIndex = source.indexOf(commentTatolStartIndexStr);
 		Integer commentTatol = null;
 		if (commentTatolStartIndex != -1) {

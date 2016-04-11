@@ -65,7 +65,7 @@ public class UserAlbumHandler extends AlbumHandler {
 		String imageId = imageURL.substring(imageURL.lastIndexOf("/p") + 2,imageURL.lastIndexOf("."));
 		
 		//’’∆¨√Ë ˆ
-		String descStartIndexStr = "<a href=\"http://www.douban.com/photos/photo/" + imageId + "/\" class=\"photolst_photo\" title=\"";
+		String descStartIndexStr = "<a href=\"https://www.douban.com/photos/photo/" + imageId + "/\" class=\"photolst_photo\" title=\"";
 		int descStartIndex = source.indexOf(descStartIndexStr);
 		String desc;
 		if (descStartIndex != -1) {
@@ -74,7 +74,7 @@ public class UserAlbumHandler extends AlbumHandler {
 			desc = "";
 		}
 		//’’∆¨∆¿¬€
-		String commentTatolStartIndexStr = "<a href=\"http://www.douban.com/photos/photo/" + imageId + "/#comments\">";
+		String commentTatolStartIndexStr = "<a href=\"https://www.douban.com/photos/photo/" + imageId + "/#comments\">";
 		int commentTatolStartIndex = source.indexOf(commentTatolStartIndexStr);
 		Integer commentTatol = null;
 		if (commentTatolStartIndex != -1) {
@@ -112,7 +112,7 @@ public class UserAlbumHandler extends AlbumHandler {
 
 	@Override
 	public String getAlbumDesc(String source) {
-		String startTag = "data-title=\"";
+		String startTag = "data-desc=\"";
 		if (source.indexOf(startTag) != -1) {
 			int startIndex = source.indexOf(startTag) + startTag.length();
 			String desc = source.substring(startIndex,source.indexOf("\"", startIndex)).replace("\\t\\n","").trim();
