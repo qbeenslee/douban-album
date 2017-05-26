@@ -56,7 +56,7 @@ public class UserAlbumHandler extends AlbumHandler {
 	public String getRawURL(String imageURL) {
 		//http://img3.douban.com/view/photo/photo/public/p1932887553.jpg - Ð¡Í¼
 		//http://img3.douban.com/view/photo/large/public/p1932887553.jpg - ´óÍ¼
-		return imageURL.replace("photo/photo", "photo/large").trim();
+		return imageURL.replace("photo/lphoto", "photo/large").trim();
 	}
 
 	@Override
