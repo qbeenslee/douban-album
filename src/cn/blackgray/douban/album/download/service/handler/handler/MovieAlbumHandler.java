@@ -94,7 +94,7 @@ public class MovieAlbumHandler extends AlbumHandler {
 
 	@Override
 	public String getRawURL(String imageURL) {
-		return imageURL.replace("photo/photo", "photo/raw").trim();
+		return imageURL.replace("photo/m", "photo/raw").trim();
 	}
 
 	@Override
