@@ -54,9 +54,19 @@ public class UserAlbumHandler extends AlbumHandler {
 
 	@Override
 	public String getRawURL(String imageURL) {
+		//已失效
 		//http://img3.douban.com/view/photo/photo/public/p1932887553.jpg - 小图
 		//http://img3.douban.com/view/photo/large/public/p1932887553.jpg - 大图
-		return imageURL.replace("photo/lphoto", "photo/large").trim();
+		
+		//2017-11-06
+		//小图
+		//https://img1.doubanio.com/view/photo/m/public/p2504126549.webp
+		//大图
+		//https://img3.doubanio.com/view/photo/l/public/p2504126600.webp
+		//原始图
+		//https://img3.doubanio.com/view/photo/large/public/p2504126600.jpg
+		
+		return imageURL.replace("photo/l", "photo/large").trim();
 	}
 
 	@Override
@@ -84,7 +94,8 @@ public class UserAlbumHandler extends AlbumHandler {
 		}
 		
 		//添加到集合
-		imageURL = imageURL.replace("thumb", "photo").trim();	//thumb——>photo：缩略图——>大图
+		//m——>l：缩略图——>大图
+		imageURL = imageURL.replace("photo/m", "photo/l").trim();	
 		desc = desc.replace("\\t\\n","").trim();
 		if (!map.containsKey(imageURL)) {
 			map.put(imageURL, new BGImage(desc, imageURL, commentTatol));
