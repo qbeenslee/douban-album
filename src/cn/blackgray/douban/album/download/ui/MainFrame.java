@@ -21,7 +21,6 @@ import javax.swing.UIManager.LookAndFeelInfo;
 
 import cn.blackgray.douban.album.download.common.Common;
 import cn.blackgray.douban.album.download.common.Console;
-import cn.blackgray.douban.album.download.common.VersionChecker;
 import cn.blackgray.douban.album.download.service.DownloadService;
 import cn.blackgray.douban.album.download.service.creator.HtmlCreator;
 import cn.blackgray.douban.album.download.ui.component.DropTextArea;
@@ -587,16 +586,16 @@ public class MainFrame extends javax.swing.JFrame {
 				//AWTUtilities.setWindowOpacity(MainFrame.getInstance(), 0.70f);
 			}
 		});
-		//检查是否有最新版本，如果有，提示下载
-		if (VersionChecker.haveNewVersion()) {
-			int result = JOptionPane.showConfirmDialog(MainFrame.getInstance(),
-					"有新版本，是否立即查看？", "版本提示", JOptionPane.YES_NO_OPTION,
-					JOptionPane.QUESTION_MESSAGE);
-			if (result == JOptionPane.YES_OPTION) {
-				Common.openURLWithBrowse(Common.URL_HELP,
-						MainFrame.getInstance());
-			}
-		}
+//		//检查是否有最新版本，如果有，提示下载
+//		if (VersionChecker.haveNewVersion()) {
+//			int result = JOptionPane.showConfirmDialog(MainFrame.getInstance(),
+//					"有新版本，是否立即查看？", "版本提示", JOptionPane.YES_NO_OPTION,
+//					JOptionPane.QUESTION_MESSAGE);
+//			if (result == JOptionPane.YES_OPTION) {
+//				Common.openURLWithBrowse(Common.URL_HELP,
+//						MainFrame.getInstance());
+//			}
+//		}
 	}
 
 	//GEN-BEGIN:variables
