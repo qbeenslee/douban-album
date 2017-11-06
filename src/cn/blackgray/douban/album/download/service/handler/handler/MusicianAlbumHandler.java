@@ -12,7 +12,7 @@ import cn.blackgray.douban.album.download.service.handler.AlbumHandler;
  */
 public class MusicianAlbumHandler extends AlbumHandler {
 
-	public static final int PAGE_SIZE_IMAGES_MUSICIAN = 40;	//音乐人照片分页大小（一页40张图）
+	public static final int PAGE_SIZE_IMAGES_MUSICIAN = 30;	//音乐人照片分页大小（一页40张图）
 	public static final String PAGE_TAG = "start";
 	public static final String IMAGE_NAME_REGEX = "p\\d+.(" + Common.IMAGE_TYPE + ")";
 	public static final String ALBUM_URL_REGEX = "(http|https)://music.douban.com/musician/\\d+/photos/";
@@ -63,7 +63,7 @@ public class MusicianAlbumHandler extends AlbumHandler {
 	public String getRawURL(String imageURL) {
 		//https://img3.doubanio.com/view/photo/photo/public/p825770544.jpg
 		//https://img3.doubanio.com/view/photo/raw/public/p825770544.jpg
-		return imageURL.replace("photo/photo", "photo/raw").trim();
+		return imageURL.replace("photo/l", "photo/raw").trim();
 	}
 
 	@Override
@@ -105,7 +105,7 @@ public class MusicianAlbumHandler extends AlbumHandler {
 			commentTatol = Integer.valueOf(s.replace("回应", ""));
 		}
 		//【照片】
-		imageURL = imageURL.replace("thumb", "photo").trim();	//thumb——>photo：缩略图——>大图
+		imageURL = imageURL.replace("photo/m", "photo/l").trim();	//thumb——>photo：缩略图——>大图
 		desc = desc.replace("\\t\\n","").trim();
 		if (!map.containsKey(imageURL)) {
 			BGImage bgImage = new BGImage(desc, imageURL, commentTatol);

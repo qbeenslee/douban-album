@@ -15,7 +15,7 @@ public class SiteAlbumHandler extends AlbumHandler {
 	public static final int PAGE_SIZE_IMAGES_SITE = 30;		//小站照片分页大小（一页30张图）
 	public static final String PAGE_TAG = "start";
 	public static final String IMAGE_NAME_REGEX = "p\\d+.(" + Common.IMAGE_TYPE + ")";
-	public static final String ALBUM_URL_REGEX = "(http|https)://site.douban.com/.+/widget/photos/\\d+/";
+	public static final String ALBUM_URL_REGEX = "(http|https)://site.douban.com/widget/photos/\\d+/";
 
 	@Override
 	public String getURLRegex() {

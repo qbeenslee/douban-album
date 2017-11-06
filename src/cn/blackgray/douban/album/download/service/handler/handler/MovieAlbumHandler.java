@@ -25,7 +25,7 @@ public class MovieAlbumHandler extends AlbumHandler {
 	//壁纸
 	//http://movie.douban.com/subject/3652297/photos?type=W
 			
-	public static final int PAGE_SIZE_IMAGES_MOVIE = 40;//电影照片分页大小（一页40张图）
+	public static final int PAGE_SIZE_IMAGES_MOVIE = 30;//电影照片分页大小（一页40张图）
 	public static final String PAGE_TAG = "start";
 	public static final String IMAGE_NAME_REGEX = "p\\d+.(" + Common.IMAGE_TYPE + ")";
 	public static final String ALBUM_URL_REGEX = "(http|https)://movie.douban.com/subject/\\d+/photos\\?(\\w+=\\w+&*)+";
@@ -94,7 +94,7 @@ public class MovieAlbumHandler extends AlbumHandler {
 
 	@Override
 	public String getRawURL(String imageURL) {
-		return imageURL.replace("photo/m", "photo/raw").trim();
+		return imageURL.replace("photo/l", "photo/raw").trim();
 	}
 
 	@Override
@@ -139,7 +139,7 @@ public class MovieAlbumHandler extends AlbumHandler {
 		//【照片】
 //		http://img3.douban.com/view/photo/thumb/public/p2125663360.jpg
 //		http://img3.douban.com/view/photo/photo/public/p2109950882.jpg
-		imageURL = imageURL.replace("thumb", "photo").trim();	//thumb——>photo：缩略图——>大图
+		imageURL = imageURL.replace("photo/m", "photo/l").trim();	//thumb——>photo：缩略图——>大图
 		desc = desc.replace("\\t\\n","").trim();
 		if (!map.containsKey(imageURL)) {
 			BGImage bgImage = new BGImage(desc, imageURL, commentTatol);

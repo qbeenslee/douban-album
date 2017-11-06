@@ -12,7 +12,7 @@ import cn.blackgray.douban.album.download.service.handler.AlbumHandler;
  */
 public class CelebrityAlbumHandler extends AlbumHandler {
 
-	public static final int PAGE_SIZE_IMAGES_CELEBRITY = 40;//影人照片分页大小（一页40张图）
+	public static final int PAGE_SIZE_IMAGES_CELEBRITY = 30;//影人照片分页大小（一页40张图）
 	public static final String PAGE_TAG = "start";
 	public static final String IMAGE_NAME_REGEX = "p\\d+.(" + Common.IMAGE_TYPE + ")";
 	public static final String ALBUM_URL_REGEX = "(http|https)://movie.douban.com/celebrity/\\d+/photos/";
@@ -67,7 +67,7 @@ public class CelebrityAlbumHandler extends AlbumHandler {
 		//http://img3.douban.com/view/photo/thumb/public/p730185909.jpg
 		//http://img5.douban.com/view/photo/photo/public/p730185909.jpg
 		//http://img5.douban.com/view/photo/raw/public/p730185909.jpg
-		return imageURL.replace("photo/photo", "photo/raw").trim();
+		return imageURL.replace("photo/l", "photo/raw").trim();
 	}
 
 	@Override
@@ -112,7 +112,7 @@ public class CelebrityAlbumHandler extends AlbumHandler {
 			commentTatol = Integer.valueOf(s.replace("回应", ""));
 		}
 		//【照片】
-		imageURL = imageURL.replace("thumb", "photo").trim();	//thumb——>photo：缩略图——>大图
+		imageURL = imageURL.replace("photo/m", "photo/l").trim();	//thumb——>photo：缩略图——>大图
 		desc = desc.replace("\\t\\n","").trim();
 		if (!map.containsKey(imageURL)) {
 			BGImage bgImage = new BGImage(desc, imageURL, commentTatol);

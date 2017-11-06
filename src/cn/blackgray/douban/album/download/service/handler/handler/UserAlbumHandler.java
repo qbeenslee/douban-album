@@ -66,7 +66,7 @@ public class UserAlbumHandler extends AlbumHandler {
 		//ԭʼͼ
 		//https://img3.doubanio.com/view/photo/large/public/p2504126600.jpg
 		
-		return imageURL.replace("photo/l", "photo/large").trim();
+		return imageURL.replace("photo/l", "photo/raw").trim();
 	}
 
 	@Override
